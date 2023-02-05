@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1000.0" prefWidth="2000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.vimukthi.controller.ManageUserFormController">
+   <children>
+      <Group layoutX="236.0" layoutY="250.0" />
+      <Label layoutX="469.0" layoutY="23.0" text="User Management" textFill="#bf2b2b">
+         <font>
+            <Font name="System Bold Italic" size="67.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="1101.0" layoutY="152.0" onAction="#btnSearchOnAction" prefHeight="31.0" prefWidth="124.0" styleClass="login-button" stylesheets="@Style.css" text="Search">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <TableView fx:id="tblUser" layoutX="269.0" layoutY="767.0" prefHeight="191.0" prefWidth="1076.0">
+        <columns>
+          <TableColumn fx:id="colUId" prefWidth="160.0" text="ID" />
+          <TableColumn fx:id="colName" minWidth="0.0" prefWidth="209.0" text="Name" />
+            <TableColumn fx:id="colEmail" minWidth="0.0" prefWidth="216.0" text="Email" />
+            <TableColumn fx:id="colAddress" minWidth="0.0" prefWidth="215.0" text="Address" />
+            <TableColumn fx:id="colContact" minWidth="0.0" prefWidth="275.0" text="Contact" />
+        </columns>
+      </TableView>
+      <JFXButton layoutX="952.0" layoutY="687.0" onAction="#btnAddOnAction" prefHeight="31.0" prefWidth="96.0" styleClass="register-button" stylesheets="@Style.css" text="Add">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="1101.0" layoutY="687.0" onAction="#btnUpdateOnAction" prefHeight="31.0" prefWidth="96.0" styleClass="register-button" stylesheets="@Style.css" text="Update">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="1449.0" layoutY="921.0" onAction="#btnReloadOnAction" prefHeight="31.0" prefWidth="96.0" styleClass="cancel-button" stylesheets="@Style.css" text="Reload">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <Group layoutX="294.0" layoutY="141.0">
+         <children>
+            <Label layoutX="3.0" layoutY="217.0" prefHeight="51.0" prefWidth="350.0" text="User Address  :-">
+               <font>
+                  <Font name="System Bold" size="35.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtUserAddress" layoutX="422.0" layoutY="217.0" onAction="#txtAddressOnAction" prefHeight="31.0" prefWidth="399.0" />
+            <Label layoutX="3.0" layoutY="145.0" prefHeight="51.0" prefWidth="346.0" text="User Email      :-">
+               <font>
+                  <Font name="System Bold" size="35.0" />
+               </font>
+            </Label>
+            <Label prefHeight="51.0" prefWidth="344.0" text="User ID           :-">
+               <font>
+                  <Font name="System Bold" size="35.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtUserId" layoutX="422.0" onAction="#txtUserIdOnAction" prefHeight="31.0" prefWidth="198.0" />
+            <Label layoutX="3.0" layoutY="72.0" prefHeight="51.0" prefWidth="343.0" text="User Name     :-">
+               <font>
+                  <Font name="System Bold" size="35.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtUserName" layoutX="422.0" layoutY="66.0" onAction="#txtNameOnAction" prefHeight="31.0" prefWidth="399.0" />
+            <JFXTextField fx:id="txtUserEmail" layoutX="422.0" layoutY="145.0" onAction="#txtEmailOnAction" prefHeight="31.0" prefWidth="399.0" />
+         </children>
+      </Group>
+      <JFXButton layoutX="1249.0" layoutY="687.0" onAction="#btnDeleteOnAction" prefHeight="31.0" prefWidth="96.0" styleClass="cancel-button" stylesheets="@Style.css" text="Delete">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="295.0" layoutY="561.0" prefHeight="45.0" prefWidth="349.0" text="User Password  :-">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtUserPassword" layoutX="716.0" layoutY="571.0" onAction="#txtPasswordOnAction" prefHeight="31.0" prefWidth="399.0" />
+      <Label layoutX="296.0" layoutY="497.0" prefHeight="45.0" prefWidth="349.0" text="User Contact  :-">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtUserContact" layoutX="716.0" layoutY="507.0" onAction="#txtContactOnAction" prefHeight="31.0" prefWidth="399.0" />
+      <Label layoutX="295.0" layoutY="430.0" prefHeight="51.0" prefWidth="350.0" text="User Position  :-">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtUserPosition" layoutX="716.0" layoutY="430.0" onAction="#txtPositionOnAction" prefHeight="31.0" prefWidth="399.0" />
+   </children>
+</AnchorPane>

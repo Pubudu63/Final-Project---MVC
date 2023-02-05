@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" prefHeight="850.0" prefWidth="793.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.vimukthi.controller.RegisterFormController">
+   <children>
+      <Label layoutX="220.0" layoutY="28.0" text="Letś Register Here" textFill="#833030">
+         <font>
+            <Font name="System Bold Italic" size="42.0" />
+         </font>
+      </Label>
+      <Group layoutX="139.0" layoutY="216.0">
+         <children>
+            <Group layoutX="4.0">
+               <children>
+                  <Label layoutY="15.0" prefHeight="32.0" prefWidth="172.0" text="User ID            :- ">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtUserId" layoutX="219.0" onAction="#txtUserIDOnAction" prefHeight="31.0" prefWidth="288.0" />
+                  <Label fx:id="lblId" layoutX="219.0" layoutY="37.0" prefHeight="21.0" prefWidth="285.0" />
+               </children>
+            </Group>
+            <Group layoutX="4.0" layoutY="71.0">
+               <children>
+                  <Label layoutY="14.0" prefHeight="32.0" prefWidth="172.0" text="User Name      :- ">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtUserName" layoutX="219.0" onAction="#txtUserNameOnAction" onMouseClicked="#nameMouseOnclick" prefHeight="31.0" prefWidth="288.0" />
+               </children>
+            </Group>
+            <Group layoutX="4.0" layoutY="149.0">
+               <children>
+                  <Label layoutY="8.0" prefHeight="32.0" prefWidth="172.0" text="User Email       :- ">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtUserEmail" layoutX="219.0" onAction="#txtEmailOnAction" onMouseClicked="#emailOnMouseClick" prefHeight="31.0" prefWidth="288.0" />
+               </children>
+            </Group>
+            <Group layoutX="4.0" layoutY="224.0">
+               <children>
+                  <Label layoutY="15.0" text="User Address   :- ">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtUserAddress" layoutX="219.0" onAction="#txtAddressOnAction" onMouseClicked="#addressOnMouseClick" prefHeight="31.0" prefWidth="288.0" />
+               </children>
+            </Group>
+         </children>
+      </Group>
+      <JFXButton layoutX="484.0" layoutY="726.0" onAction="#btnClearOnAction" prefHeight="42.0" prefWidth="99.0" styleClass="back-button" stylesheets="@Style.css" text="Clear">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="625.0" layoutY="727.0" onAction="#btnAddUserOnAction" prefHeight="39.0" prefWidth="134.0" styleClass="register-button" stylesheets="@Style.css" text="Add">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <Group layoutX="147.0" layoutY="596.0">
+         <children>
+            <Label layoutY="15.0" text="User Pssword  :- ">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtUserPassword" layoutX="227.0" onAction="#txtPasswordOnAction" onMouseClicked="#passwordOnMouseClick" prefHeight="31.0" prefWidth="288.0" />
+            <Label fx:id="lblpassword" layoutX="229.0" layoutY="37.0" prefHeight="21.0" prefWidth="285.0" />
+         </children>
+      </Group>
+      <Group layoutX="147.0" layoutY="517.0">
+         <children>
+            <Label layoutY="15.0" text="User Contact    :- ">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtUserContact" layoutX="219.0" onAction="#txtContactOnAction" onMouseClicked="#contactOnMouseClick" prefHeight="31.0" prefWidth="288.0" />
+         </children>
+      </Group>
+      <Label layoutX="143.0" layoutY="171.0" prefHeight="32.0" prefWidth="172.0" text="Position          :- ">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <JFXRadioButton layoutX="377.0" layoutY="177.0" text="Admin">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="rbtnGroup" />
+         </toggleGroup>
+      </JFXRadioButton>
+      <JFXRadioButton layoutX="526.0" layoutY="177.0" text="Employee" toggleGroup="$rbtnGroup">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></JFXRadioButton>
+   </children>
+   <styleClass>
+      <String fx:value="login-button" />
+      <String fx:value="test-button" />
+   </styleClass>
+</AnchorPane>

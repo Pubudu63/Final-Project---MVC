@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1000.0" prefWidth="2000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.vimukthi.controller.PlaceOrderFormController">
+   <children>
+      <Label layoutX="517.0" layoutY="14.0" text="Place An Order" textFill="#bf2b2b">
+         <font>
+            <Font name="System Bold Italic" size="67.0" />
+         </font>
+      </Label>
+      <Group layoutX="829.0" layoutY="247.0">
+         <children>
+            <Label layoutX="-41.0" layoutY="30.0" text="Customer ID :-">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+            <Label layoutX="-41.0" layoutY="109.0" text="Customer Name :-">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblCustomerName" layoutX="204.0" layoutY="114.0" prefHeight="30.0" prefWidth="194.0" textFill="#2d9c8e">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font></Label>
+            <JFXComboBox fx:id="cmbCustomerID" layoutX="183.0" layoutY="29.0" onAction="#cmbCustomerIDOnAction" prefHeight="31.0" prefWidth="100.0" promptText="Choose" unFocusColor="#2d9c8e" />
+         </children>
+      </Group>
+      <Group layoutX="48.0" layoutY="198.0">
+         <children>
+            <Label layoutX="4.0" text="Item Code :-">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+            <Label layoutX="-1.0" layoutY="88.0" text="Item Name :-">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+            <Label layoutX="-1.0" layoutY="161.0" text="Unit Price :-">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+            <Label layoutX="-1.0" layoutY="234.0" text="Qty On Hand :-">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cmbItemCode" layoutX="199.0" layoutY="4.0" onAction="#cmbItemCodeOnAction" prefHeight="31.0" prefWidth="203.0" promptText="I001" />
+            <Label fx:id="lblQty" layoutX="207.0" layoutY="239.0" prefHeight="30.0" prefWidth="201.0" textFill="#ab213f">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblName" layoutX="198.0" layoutY="93.0" prefHeight="30.0" prefWidth="215.0" textFill="#2d9c8e">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblUnitPrice" layoutX="176.0" layoutY="166.0" prefHeight="30.0" prefWidth="215.0" textFill="#2d9c8e">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Group>
+      <TableView fx:id="tblCart" layoutX="60.0" layoutY="581.0" prefHeight="346.0" prefWidth="1272.0">
+        <columns>
+          <TableColumn fx:id="colItemCode" prefWidth="219.00003051757812" text="Item Code" />
+          <TableColumn fx:id="colItemName" minWidth="0.0" prefWidth="275.0" text="Item Name" />
+            <TableColumn fx:id="colQty" minWidth="0.0" prefWidth="139.0" text="Qty" />
+            <TableColumn fx:id="colUnitPrice" minWidth="0.0" prefWidth="176.0" text="Unit Price" />
+            <TableColumn fx:id="colTotal" minWidth="3.0" prefWidth="234.0" text="Total" />
+            <TableColumn fx:id="colAction" minWidth="3.0" prefWidth="234.0" text="Action" />
+        </columns>
+      </TableView>
+      <Label layoutX="1227.0" layoutY="155.0" text="Billing Date :-">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblOrderDate" layoutX="1419.0" layoutY="160.0" prefHeight="30.0" prefWidth="150.0" textFill="#1e80c7">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font></Label>
+      <Label layoutX="788.0" layoutY="196.0" text="Bill ID :-">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblBillingID" layoutX="925.0" layoutY="201.0" prefHeight="30.0" prefWidth="194.0" textFill="#2d9c8e">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font></Label>
+      <JFXButton layoutX="1141.0" layoutY="283.0" onAction="#btnNewCustomerOnAction" styleClass="back-button" stylesheets="@Style.css" text="Add New" />
+      <JFXButton layoutX="1175.0" layoutY="473.0" onAction="#btnAddToCartOnAction" styleClass="login-button" stylesheets="@Style.css" text="Add To Cart">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="1372.0" layoutY="938.0" onAction="#btnConfirmOnAction" prefHeight="31.0" prefWidth="93.0" styleClass="register-button" stylesheets="@Style.css" text="Confirm">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></JFXButton>
+      <Label layoutX="47.0" layoutY="500.0" prefHeight="39.0" prefWidth="102.0" text="Qty :-">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtQty" focusColor="#d71821" layoutX="149.0" layoutY="498.0" prefHeight="44.0" prefWidth="184.0" stylesheets="@Style.css" unFocusColor="#4a5fb2">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXTextField>
+   </children>
+</AnchorPane>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" prefHeight="1000.0" prefWidth="2000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.vimukthi.controller.AdminFormController">
+   <children>
+      <AnchorPane prefHeight="1000.0" prefWidth="1300.0">
+         <children>
+            <ImageView fitHeight="1000.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/b1.png" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="40.0" layoutY="477.0" onAction="#btnManageCustomers" prefHeight="44.0" prefWidth="210.0" styleClass="adminLogin-button" stylesheets="@Style.css" text="Manage Customers">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="40.0" layoutY="586.0" onAction="#btnManageEmployee" prefHeight="44.0" prefWidth="210.0" styleClass="adminLogin-button" stylesheets="@Style.css" text="Manage Employee">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="40.0" layoutY="693.0" onAction="#btnManageSupplier" prefHeight="44.0" prefWidth="210.0" styleClass="adminLogin-button" stylesheets="@Style.css" text="Manage Supplier">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="40.0" layoutY="799.0" onAction="#btnManageOrders" prefHeight="44.0" prefWidth="210.0" styleClass="adminLogin-button" stylesheets="@Style.css" text="Manage Orders">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="40.0" layoutY="895.0" onAction="#btnIncomeReport" prefHeight="44.0" prefWidth="210.0" styleClass="adminLogin-button" stylesheets="@Style.css" text="Income Report">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <AnchorPane fx:id="pane1" layoutX="300.0" layoutY="-1.0" prefHeight="1000.0" prefWidth="998.0" />
+            <JFXButton layoutX="14.0" layoutY="14.0" onAction="#btnBackOnAction" prefHeight="34.0" prefWidth="70.0" styleClass="back-button" stylesheets="@Style.css" text="Back">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

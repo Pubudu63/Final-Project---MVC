@@ -1,0 +1,29 @@
+.register-button{
+    -fx-background-color: #F68A1F ;
+    -fx-background-radius: 10;
+}
+
+.login-button{
+    -fx-background-color: #42A5F5 ;
+    -fx-background-radius: 10;
+}
+
+.back-button{
+    -fx-background-color: #50D3FF ;
+    -fx-background-radius: 10;
+}
+
+.cancel-button{
+    -fx-background-color: #d63031 ;
+    -fx-background-radius: 10;
+}
+
+.adminLogin-button{
+    -fx-background-color: #0C8AEF ;
+    -fx-background-radius:10;
+}
+
+.test-button{
+    -fx-background-color: #C4E2E5 ;
+}
+

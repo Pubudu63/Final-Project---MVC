@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1000.0" prefWidth="2000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.vimukthi.controller.ManageCustomerFormController">
+   <children>
+      <Group layoutX="236.0" layoutY="250.0" />
+      <Label layoutX="470.0" layoutY="52.0" text="Customer Management" textFill="#bf2b2b">
+         <font>
+            <Font name="System Bold Italic" size="67.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="961.0" layoutY="590.0" onAction="#btnAddOnAction" prefHeight="31.0" prefWidth="96.0" styleClass="register-button" stylesheets="@Style.css" text="Add">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="1105.0" layoutY="590.0" onAction="#btnUpdateOnAction" prefHeight="31.0" prefWidth="96.0" styleClass="register-button" stylesheets="@Style.css" text="Update">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="1449.0" layoutY="921.0" onAction="#btnReloadOnAction" prefHeight="31.0" prefWidth="96.0" styleClass="cancel-button" stylesheets="@Style.css" text="Reload">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <Group layoutX="294.0" layoutY="222.0">
+         <children>
+            <JFXTextField fx:id="txtCustomerContact" layoutX="422.0" layoutY="291.0" onAction="#txtContactOnAction" onMouseClicked="#contactMouseOnClick" prefHeight="31.0" prefWidth="399.0" />
+            <Label layoutX="1.0" layoutY="291.0" prefHeight="45.0" prefWidth="349.0" text="Customer Contact  :-">
+               <font>
+                  <Font name="System Bold" size="35.0" />
+               </font>
+            </Label>
+            <Label layoutX="3.0" layoutY="217.0" prefHeight="51.0" prefWidth="350.0" text="Customer Address  :-">
+               <font>
+                  <Font name="System Bold" size="35.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtCustomerAddress" layoutX="422.0" layoutY="217.0" onAction="#txtAddresslOnAction" onMouseClicked="#addressMouseOnClick" prefHeight="31.0" prefWidth="399.0" />
+            <Label layoutX="3.0" layoutY="145.0" prefHeight="51.0" prefWidth="340.0" text="Customer Email      :-">
+               <font>
+                  <Font name="System Bold" size="35.0" />
+               </font>
+            </Label>
+            <Label prefHeight="51.0" prefWidth="344.0" text="Customer ID           :-">
+               <font>
+                  <Font name="System Bold" size="35.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtCustomerId" layoutX="422.0" onAction="#txtCustomerIdOnAction" onMouseClicked="#IdMouseOnClick" prefHeight="31.0" prefWidth="198.0" />
+            <Label layoutX="3.0" layoutY="72.0" prefHeight="51.0" prefWidth="338.0" text="Customer Name     :-">
+               <font>
+                  <Font name="System Bold" size="35.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtCustomerName" layoutX="422.0" layoutY="66.0" onAction="#txtNameOnAction" onMouseClicked="#nameMouseOnClick" prefHeight="31.0" prefWidth="399.0" />
+            <JFXTextField fx:id="txtCustomerEmail" layoutX="422.0" layoutY="145.0" onAction="#txtEmailOnAction" onMouseClicked="#emailMouseOnClick" prefHeight="31.0" prefWidth="399.0" />
+            <Label fx:id="lblId" layoutX="422.0" layoutY="41.0" prefHeight="21.0" prefWidth="83.0" />
+         </children>
+      </Group>
+      <JFXButton layoutX="1249.0" layoutY="590.0" onAction="#btnDeleteOnAction" prefHeight="31.0" prefWidth="96.0" styleClass="cancel-button" stylesheets="@Style.css" text="Delete">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="1259.0" layoutY="223.0" onAction="#btnSearchOnAction" prefHeight="31.0" prefWidth="124.0" styleClass="login-button" stylesheets="@Style.css" text="Search">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <TableView fx:id="tblMain" layoutX="294.0" layoutY="663.0" prefHeight="305.0" prefWidth="1088.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="141.99996948242188" text="ID" />
+          <TableColumn fx:id="colName" prefWidth="153.0" text="Name" />
+            <TableColumn fx:id="colEmail" prefWidth="236.0" text="Email" />
+            <TableColumn fx:id="colAddress" prefWidth="267.0" text="Address" />
+            <TableColumn fx:id="colContact" prefWidth="289.0" text="Contact" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
