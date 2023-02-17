@@ -11,14 +11,26 @@ import java.util.ArrayList;
 public class UserModel {
     public static boolean addNewUser(User user) throws SQLException, ClassNotFoundException {
         String sql = "INSERT INTO user VALUES (?,?,?,?,?,?,?);";
-        return CrudUtil.execute(sql,user.getId(),user.getName(),user.getEmail(),user.getAddress(),user.getPosition(),user.getContact(),user.getPassword());
+        return CrudUtil.execute(sql,user.getId(),
+                user.getName(),
+                user.getEmail(),
+                user.getAddress(),
+                user.getPosition(),
+                user.getContact(),
+                user.getPassword());
     }
 
     public static User searchUser(String uId) throws SQLException, ClassNotFoundException {
         ResultSet resultSet = CrudUtil.execute("SELECT * FROM user WHERE uId = ? ",uId);
 
         while (resultSet.next()){
-            return new User(resultSet.getString(1),resultSet.getString(2),resultSet.getString(3),resultSet.getString(4),resultSet.getString(5),resultSet.getString(6),resultSet.getString(7));
+            return new User(resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4),
+                    resultSet.getString(5),
+                    resultSet.getString(6),
+                    resultSet.getString(7));
 
         }
         return null;
@@ -46,7 +58,11 @@ public class UserModel {
         ArrayList<User> list=new ArrayList<>();
 
         while (resultSet.next()){
-            list.add(new User(resultSet.getString(1),resultSet.getString(2),resultSet.getString(3),resultSet.getString(4),resultSet.getString(6)));
+            list.add(new User(resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4),
+                    resultSet.getString(6)));
         }
         return list;
     }

@@ -22,7 +22,11 @@ public class CustomerModel {
         ResultSet resultSet = CrudUtil.execute("SELECT * FROM customer WHERE cId = ? ", cId);
 
         while (resultSet.next()) {
-            return new Customer(resultSet.getString(1), resultSet.getString(2), resultSet.getString(3), resultSet.getString(4), resultSet.getString(5));
+            return new Customer(resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4),
+                    resultSet.getString(5));
 
         }
         return null;

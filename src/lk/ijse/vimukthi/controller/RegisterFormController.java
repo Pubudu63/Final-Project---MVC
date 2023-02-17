@@ -8,7 +8,11 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Paint;
+import lk.ijse.vimukthi.dto.UserDTO;
 import lk.ijse.vimukthi.model.UserModel;
+import lk.ijse.vimukthi.service.ServiceFactory;
+import lk.ijse.vimukthi.service.ServiceTypes;
+import lk.ijse.vimukthi.service.custom.UserService;
 import lk.ijse.vimukthi.to.User;
 
 import java.io.IOException;
@@ -35,6 +39,8 @@ public class RegisterFormController {
     private Pattern passwordPattern;
     private Pattern contactPattern;
 
+    public UserService userService;
+
 
     public void initialize(){
         userIdPattern = Pattern.compile("^([U0]{2})([0-9]{2})$");
@@ -43,6 +49,8 @@ public class RegisterFormController {
         addressPattern = Pattern.compile("^([A-Za-z0-9\\W\\s]{2,})$");
         passwordPattern = Pattern.compile("^([0-9]{4})$");
         contactPattern = Pattern.compile("^([0-9]{10})$");
+
+        this.userService = ServiceFactory.getInstance().getService(ServiceTypes.USER);
     }
 
 
@@ -71,8 +79,15 @@ public class RegisterFormController {
         String position = selectedToggle.getText();
 
 
-        User user =new User(userId, userName, userEmail, userAddress, position, userContact, userPassword);
-        try {
+        UserDTO userDTO =new UserDTO(userId, userName, userEmail, userAddress, position, userContact, userPassword);
+        if (userService.addUser(userDTO)) {
+            new Alert(Alert.AlertType.CONFIRMATION, "User Added!").show();
+        } else {
+            new Alert(Alert.AlertType.WARNING, "Something Wrong!").show();
+        }
+
+
+       /* try {
             boolean isAdded = UserModel.addNewUser(user);
             if (isAdded) {
                 new Alert(Alert.AlertType.CONFIRMATION, "User Added!").show();
@@ -84,7 +99,7 @@ public class RegisterFormController {
             new Alert(Alert.AlertType.WARNING, "Driver not found!").show();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
 

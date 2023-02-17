@@ -1,0 +1,4 @@
+package lk.ijse.vimukthi.dto;
+
+public class PlaceOrderDTO {
+}

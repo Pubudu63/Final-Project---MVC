@@ -15,10 +15,8 @@ public class Employee {
         this.contact = contact;
     }
 
-
-
-
-
+    public Employee(String emId, String name, String email, String contact) {
+    }
 
 
     //public Employee(String emId, String name, String email, String address, String contact) {

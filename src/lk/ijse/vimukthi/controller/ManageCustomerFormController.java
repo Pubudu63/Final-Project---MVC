@@ -11,8 +11,12 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Paint;
+import lk.ijse.vimukthi.dto.CustomerDTO;
 import lk.ijse.vimukthi.model.CustomerModel;
 import lk.ijse.vimukthi.model.EmployeeModel;
+import lk.ijse.vimukthi.service.ServiceFactory;
+import lk.ijse.vimukthi.service.ServiceTypes;
+import lk.ijse.vimukthi.service.custom.CustomerService;
 import lk.ijse.vimukthi.to.Customer;
 import lk.ijse.vimukthi.to.Employee;
 
@@ -43,6 +47,8 @@ public class ManageCustomerFormController {
     private Pattern addressPattern;
     private Pattern contactPattern;
 
+    public CustomerService customerService;
+
     public void initialize(){
 
         colId.setCellValueFactory(new PropertyValueFactory<Customer,String>("id"));
@@ -56,6 +62,9 @@ public class ManageCustomerFormController {
         emailPattern = Pattern.compile("^([a-z|0-9]{3,})[@]([a-z]{2,})\\.(com|lk)$");
         addressPattern = Pattern.compile("^([A-Za-z0-9\\W\\s]{2,})$");
         contactPattern = Pattern.compile("^([0-9]{10})$");
+
+        LoadCustomerID();
+        customerService = ServiceFactory.getInstance().getService(ServiceTypes.CUSTOMER);
 
     }
     /*public void initialize(){
@@ -74,7 +83,22 @@ public class ManageCustomerFormController {
         String address = txtCustomerAddress.getText();
         String contact = txtCustomerContact.getText();
 
-        try {
+
+        CustomerDTO customer = new CustomerDTO(cId,name,email,address,contact);
+        try{
+             if  (customerService.addCustomer(customer)) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Customer Added Sucess..!").show();
+            }else{
+                 new Alert(Alert.AlertType.WARNING, "Something is going wrong..!").show();
+             }
+
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.WARNING, "Customer Already Added..!").show();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        /*try {
             boolean isAdded = CustomerModel.addNewCustomer(cId,name,email,address,contact);
             if(isAdded){
                 new Alert(Alert.AlertType.CONFIRMATION, "Customer Added Sucess..!").show();
@@ -85,7 +109,7 @@ public class ManageCustomerFormController {
             new Alert(Alert.AlertType.WARNING, "Customer Already Added..!").show();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-        }
+        }*/
 
         txtCustomerId.clear();
         txtCustomerName.clear();
@@ -103,10 +127,10 @@ public class ManageCustomerFormController {
         String address = txtCustomerAddress.getText();
         String contact = txtCustomerContact.getText();
 
-        Customer customer = new Customer(cId,name,email,address,contact);
+        CustomerDTO customerDTO = new CustomerDTO(cId,name,email,address,contact);
 
         try {
-            boolean isAdded = CustomerModel.updateCustomer(customer);
+            boolean isAdded = customerService.updateCustomer(customerDTO);
             if (isAdded) {
                 new Alert(Alert.AlertType.INFORMATION, "Update Successful").show();
             } else {
@@ -179,16 +203,19 @@ public class ManageCustomerFormController {
 
 
 
-    public ObservableList<Customer> observableList = FXCollections.observableArrayList();
+    public ObservableList<String> observableList = FXCollections.observableArrayList();
 
 
 
-    private void LoadCustomer() {
+    private void LoadCustomerID() {
         try {
-            ArrayList<Customer> list = CustomerModel.getAllCustomers();
 
-            for (Customer customer : list) {
-                observableList.add(customer);
+
+            ArrayList<String> list = customerService.loadCustomerIDs();
+
+
+            for (String id : list) {
+                observableList.add(id);
             }
             tblMain.setItems(observableList);
         } catch (SQLException | ClassNotFoundException e) {
@@ -198,7 +225,7 @@ public class ManageCustomerFormController {
 
     public void btnReloadOnAction(ActionEvent actionEvent) {
         observableList.clear();
-        LoadCustomer();
+        LoadCustomerID();
     }
 
     

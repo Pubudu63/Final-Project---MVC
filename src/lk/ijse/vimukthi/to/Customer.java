@@ -18,6 +18,9 @@ public class Customer {
         this.contact = contact;
     }
 
+    public Customer(String id, String name, String address, String contact) {
+    }
+
     public String getId() {
         return id;
     }
